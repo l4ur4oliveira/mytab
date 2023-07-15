@@ -1,6 +1,12 @@
+:root {
+  --primary-color: rgb(100, 122, 155);
+  --secondary-color: rgb(55, 65, 81);
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: Poppins, sans-serif;
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -8,26 +14,40 @@
 
 body {
   height: 100vh;
+  padding: 3.6rem;
+  background: linear-gradient(to left bottom, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+  color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  width: 100%;
+  max-width: 60rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+}
+
+header .title {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to left bottom, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
-  color: rgb(100, 122, 155);
+  gap: 0.8rem;
 }
 
-.app {
-  width: 80rem;
-  padding: 2.4rem;
-  margin: 3.6rem;
-  background-color: transparent;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgb(140, 177, 255);
-  border-radius: .4rem;
-  overflow: hidden;
+header h1,
+header i {
+  font-size: 4rem;
 }
 
 form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,24 +60,48 @@ label {
 
 input {
   width: 100%;
-  max-width: 60rem;
-  padding: 1.2rem 1.6rem;
+  padding: 1.2rem 1.6rem 1.2rem 4rem;
   font-size: 1.2rem;
-  border: 1px solid rgb(55, 65, 81);
+  border: 2px solid var(--secondary-color);
   border-radius: 2.4rem;
   background-color: #000;
-  color: rgb(100, 122, 155);
+  color: var(--primary-color);
   outline-offset: .2rem;
 }
 
 input::placeholder {
-  color: rgb(55, 65, 81);
+  color: var(--secondary-color);
 }
 
 input:focus {
-  outline: 1px solid rgb(55, 65, 81);
+  outline: 2px solid var(--secondary-color);
 }
 
-h1 {
-  font-size: 2rem;
+i.ph-google-logo {
+  position: absolute;
+  top: 4rem;
+  left: 0.8rem;
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+
+.shortcuts {
+  width: 100%;
+  max-width: 60rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 3.2rem;
+  text-align: center;
+}
+
+.shortcuts i {
+  font-size: 4rem;
+}
+
+@media (min-width: 768px) {
+  .shortcuts {
+    display: flex;
+    justify-content: space-around;
+  }
 }

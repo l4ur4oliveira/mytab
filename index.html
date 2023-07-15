@@ -9,13 +9,46 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" />
         <link rel="stylesheet" href="styles/global.css" />
+
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
     </head>
     <body>
-        <main class="app">
+        <header>
+            <div class="title">
+                <i class="ph ph-bookmark"></i>
+                <h1>MyTab</h1>
+            </div>
             <form action="" method="get">
                 <label for="google-search">Pesquise no Google</label>
-                <input type="text" name="google-search" id="google-search" placeholder="Pesquise no Google" />
+                <input
+                    type="text"
+                    name="google-search"
+                    id="google-search"
+                    placeholder="Pesquise no Google"
+                    tabindex="1"
+                />
+                <i class="ph ph-google-logo"></i>
             </form>
-        </main>
+        </header>
+        <section class="shortcuts">
+            <a href="https://amazon.com.br/" target="_blank">
+                <i class="ph ph-amazon-logo"></i>
+            </a>
+            <a href="https://notion.so/" target="_blank">
+                <i class="ph ph-notion-logo"></i>
+            </a>
+            <a href="https://organizze.com.br/login" target="_blank">
+                <i class="ph ph-piggy-bank"></i>
+            </a>
+            <a href="https://youtube.com/" target="_blank">
+                <i class="ph ph-youtube-logo"></i>
+            </a>
+            <a href="https://www.google.com/maps" target="_blank">
+                <i class="ph ph-map-pin"></i>
+            </a>
+            <a href="https://linkedin.com.br/" target="_blank">
+                <i class="ph ph-linkedin-logo"></i>
+            </a>
+        </section>
     </body>
 </html>
