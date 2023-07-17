@@ -152,7 +152,6 @@ i.ph-google-logo {
 .news-content--item .item-title a {
   font-size: 1.2rem;
   font-weight: 700;
-  line-height: 3.2rem;
   transition: border-bottom 400ms;
 }
 
@@ -163,8 +162,14 @@ i.ph-google-logo {
 }
 
 .news-content--item .item-summary {
+  margin-top: 0.8rem;
   font-size: 1rem;
   color: var(--primary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 @media (min-width: 768px) {
