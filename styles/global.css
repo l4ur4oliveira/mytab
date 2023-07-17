@@ -139,7 +139,7 @@ i.ph-google-logo {
 
 .news-content--item {
   padding-bottom: 1.6rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.2rem;
   border-bottom: 1px solid rgba(100, 122, 155, 0.2);
 }
 
@@ -148,14 +148,23 @@ i.ph-google-logo {
   border-bottom: none;
 }
 
-.news-content--item .item-title {
-  font-size: 1.6rem;
+.news-content--item .item-title,
+.news-content--item .item-title a {
+  font-size: 1.2rem;
   font-weight: 700;
+  line-height: 3.2rem;
+  transition: border-bottom 400ms;
+}
+
+.news-content--item .item-title a:hover,
+.news-content--item .item-title a:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(100, 122, 155, 0.5);
 }
 
 .news-content--item .item-summary {
-  font-size: 1.2rem;
-  color: var(--secondary-color);
+  font-size: 1rem;
+  color: var(--primary-color);
 }
 
 @media (min-width: 768px) {
@@ -184,7 +193,8 @@ i.ph-google-logo {
   }
 
   .news {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
   }
 }
