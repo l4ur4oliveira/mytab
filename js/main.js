@@ -96,6 +96,20 @@ function getTabNews() {
         });
 }
 
+const searchForm = document.querySelector("form");
+const clearButton = document.querySelector(".clear");
+
+searchForm.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+
+    searchForm.submit();
+    searchForm.reset();
+});
+
+clearButton.addEventListener("click", (ev) => {
+    searchForm.reset();
+});
+
 getGithub();
 getMedium();
 getFreeCodeCamp();

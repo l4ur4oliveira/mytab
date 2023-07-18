@@ -93,12 +93,31 @@ input:focus {
   outline: 2px solid var(--secondary-color);
 }
 
+input:placeholder-shown~button {
+  visibility: hidden;
+}
+
 i.ph-google-logo {
   position: absolute;
   top: 4rem;
   left: 0.8rem;
   font-size: 3rem;
   color: var(--secondary-color);
+}
+
+.clear {
+  visibility: visible;
+  position: absolute;
+  top: 4.4rem;
+  right: 1.2rem;
+  background-color: transparent;
+  border: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.clear i {
+  font-size: 2rem;
 }
 
 .shortcuts {
