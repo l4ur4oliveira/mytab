@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130" height="150" preserveAspectRatio="xMidYMid meet">
+  <g clip-path="url(#__lottie_element_2)">
+    <g transform="matrix(1,0,0,1,68,64)" opacity="1" style="display: block;">
+      <g opacity="1" transform="matrix(1.2,0,0,1.2,0,0)">
+        <path
+          fill="rgb(255,255,255)"
+          fill-opacity="1"
+          d=" M26,-36 C26,-36 -3.937999963760376,-36.01100158691406 -3.937999963760376,-36.01100158691406 C-3.937999963760376,-36.01100158691406 -34,-36 -34,-36 C-34,-36 -34,36 -34,60 C-18.875,48 -4,36 -4,36 C-4,36 11,48 26,60 C26,36 26,-36 26,-36z">
+        </path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill-opacity="0"
+          stroke="rgb(100,121,154)"
+          stroke-opacity="1"
+          stroke-width="6"
+          d=" M26,-36 C26,-36 -3.937999963760376,-36.01100158691406 -3.937999963760376,-36.01100158691406 C-3.937999963760376,-36.01100158691406 -34,-36 -34,-36 C-34,-36 -34,36 -34,60 C-18.875,48 -4,36 -4,36 C-4,36 11,48 26,60 C26,36 26,-36 26,-36z">
+        </path>
+      </g>
+    </g>
+  </g>
+</svg>
