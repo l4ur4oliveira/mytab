@@ -1,99 +1,58 @@
-function getGithub() {
-    fetch("https://api.hackertab.dev/data/v2/github/global/daily.json")
+function fetchData(apiURL) {
+    return fetch(apiURL)
         .then((response) => response.json())
         .then((data) => {
-            const newsColumn = document.querySelector(".github");
-            const newsContent = data.map((item) => {
-                return `<div class="news-content--item">
-                          <p class="item-title">
-                            <a href="${item.url}" target="_blank">${item.title}</a>
-                          </p>
-                          ${
-                              item.description
-                                  ? `<p class="item-summary">
-                                    ${item.description}
-                                  </p>`
-                                  : ""
-                          }
-                        </div>`;
+            const newData = data.map((item) => {
+                return {
+                    title: item.title,
+                    url: item.url || `https://www.tabnews.com.br/${item.owner_username}/${item.slug}`,
+                    description: item.description || "",
+                };
             });
 
-            newsColumn.innerHTML = newsContent.join("");
+            return newData;
         });
+}
+
+function renderData(item) {
+    return `<div class="news-content--item">
+            <p class="item-title">
+              <a href="${item.url}" target="_blank">${item.title}</a>
+            </p>
+            ${item.description ? `<p class="item-summary">${item.description}</p>` : ""}
+          </div>`;
+}
+
+function getGithub() {
+    fetchData("https://api.hackertab.dev/data/v2/github/global/daily.json").then((data) => {
+        const newsColumn = document.querySelector(".github");
+
+        newsColumn.innerHTML = data.map((item) => renderData(item)).join("");
+    });
 }
 
 function getMedium() {
-    fetch("https://api.hackertab.dev/data/v2/medium/javascript.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const newsColumn = document.querySelector(".medium");
-            const newsContent = data.map((item) => {
-                return `<div class="news-content--item">
-                          <p class="item-title">
-                            <a href="${item.url}" target="_blank">${item.title}</a>
-                          </p>
-                          ${
-                              item.description
-                                  ? `<p class="item-summary">
-                                    ${item.description}
-                                  </p>`
-                                  : ""
-                          }
-                        </div>`;
-            });
+    fetchData("https://api.hackertab.dev/data/v2/medium/javascript.json").then((data) => {
+        const newsColumn = document.querySelector(".medium");
 
-            newsColumn.innerHTML = newsContent.join("");
-        });
+        newsColumn.innerHTML = data.map((item) => renderData(item)).join("");
+    });
 }
 
 function getFreeCodeCamp() {
-    fetch("https://api.hackertab.dev/data/v2/freecodecamp/programming.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const newsColumn = document.querySelector(".freecodecamp");
-            const newsContent = data.map((item) => {
-                return `<div class="news-content--item">
-                          <p class="item-title">
-                            <a href="${item.url}" target="_blank">${item.title}</a>
-                          </p>
-                          ${
-                              item.description
-                                  ? `<p class="item-summary">
-                                    ${item.description}
-                                  </p>`
-                                  : ""
-                          }
-                        </div>`;
-            });
+    fetchData("https://api.hackertab.dev/data/v2/freecodecamp/programming.json").then((data) => {
+        const newsColumn = document.querySelector(".freecodecamp");
 
-            newsColumn.innerHTML = newsContent.join("");
-        });
+        newsColumn.innerHTML = data.map((item) => renderData(item)).join("");
+    });
 }
 
 function getTabNews() {
-    fetch("https://www.tabnews.com.br/api/v1/contents?strategy=relevant")
-        .then((response) => response.json())
-        .then((data) => {
-            const newsColumn = document.querySelector(".tabnews");
-            const newsContent = data.map((item) => {
-                return `<div class="news-content--item">
-                          <p class="item-title">
-                            <a href="https://www.tabnews.com.br/${item.owner_username}/${item.slug}" target="_blank">${
-                    item.title
-                }</a>
-                          </p>
-                          ${
-                              item.description
-                                  ? `<p class="item-summary">
-                                    ${item.description}
-                                  </p>`
-                                  : ""
-                          }
-                        </div>`;
-            });
+    fetchData("https://www.tabnews.com.br/api/v1/contents?strategy=relevant").then((data) => {
+        const newsColumn = document.querySelector(".tabnews");
 
-            newsColumn.innerHTML = newsContent.join("");
-        });
+        newsColumn.innerHTML = data.map((item) => renderData(item)).join("");
+    });
 }
 
 const searchForm = document.querySelector("form");
