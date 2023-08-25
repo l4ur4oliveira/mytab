@@ -17,9 +17,9 @@ function fetchData(apiURL) {
 function renderData(item) {
     return `<div class="news-content--item">
             <p class="item-title">
-              <a href="${item.url}" target="_blank">${item.title}</a>
+              <a href="${item.url}" target="_blank">${item.title.replace(/[<>]/g, "")}</a>
             </p>
-            ${item.description ? `<p class="item-summary">${item.description}</p>` : ""}
+            ${item.description ? `<p class="item-summary">${item.description.replace(/[<>]/g, "")}</p>` : ""}
           </div>`;
 }
 
