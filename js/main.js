@@ -19,7 +19,7 @@ function renderData(item) {
             <p class="item-title">
               <a href="${item.url}" target="_blank">${item.title.replace(/[<>]/g, "")}</a>
             </p>
-            ${item.description ? `<p class="item-summary">${item.description.replace(/[<>]/g, "")}</p>` : ""}
+            ${item.description && `<p class="item-summary">${item.description.replace(/[<>]/g, "")}</p>`}
           </div>`;
 }
 
