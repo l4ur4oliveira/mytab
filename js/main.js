@@ -39,9 +39,9 @@ function getMedium() {
     });
 }
 
-function getFreeCodeCamp() {
-    fetchData("https://api.hackertab.dev/data/v2/freecodecamp/programming.json").then((data) => {
-        const newsColumn = document.querySelector(".freecodecamp");
+function getDevto() {
+    fetchData("https://api.hackertab.dev/data/v2/devto/programming.json").then((data) => {
+        const newsColumn = document.querySelector(".devto");
 
         newsColumn.innerHTML = data.map((item) => renderData(item)).join("");
     });
@@ -71,5 +71,5 @@ clearButton.addEventListener("click", (ev) => {
 
 getGithub();
 getMedium();
-getFreeCodeCamp();
+getDevto();
 getTabNews();
