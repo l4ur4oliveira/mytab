@@ -58,69 +58,6 @@ header .title {
   justify-content: center;
 }
 
-header i {
-  font-size: 4rem;
-}
-
-form {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-label {
-  font-size: 1.6rem;
-}
-
-input {
-  width: 100%;
-  padding: 1.2rem 1.6rem 1.2rem 4rem;
-  font-size: 1.2rem;
-  border: 2px solid var(--secondary-color);
-  border-radius: 2.4rem;
-  background-color: #000;
-  color: var(--primary-color);
-  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.4);
-}
-
-input::placeholder {
-  color: var(--secondary-color);
-}
-
-input:focus {
-  outline-offset: .2rem;
-  outline: 2px solid var(--secondary-color);
-}
-
-input:placeholder-shown~button {
-  visibility: hidden;
-}
-
-i.ph-google-logo {
-  position: absolute;
-  top: 4rem;
-  left: 0.8rem;
-  font-size: 3rem;
-  color: var(--secondary-color);
-}
-
-.clear {
-  visibility: visible;
-  position: absolute;
-  top: 4.4rem;
-  right: 1.2rem;
-  background-color: transparent;
-  border: none;
-  color: var(--secondary-color);
-  cursor: pointer;
-}
-
-.clear i {
-  font-size: 2rem;
-}
-
 .shortcuts {
   margin: 2rem auto;
   display: grid;
@@ -252,6 +189,6 @@ i.ph-google-logo {
   }
 
   .news-content {
-    height: 40rem;
+    height: 50rem;
   }
 }
