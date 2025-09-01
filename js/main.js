@@ -10,7 +10,7 @@ function fetchData(apiURL) {
                 };
             });
 
-            return newData;
+            return newData.slice(0,8);
         });
 }
 

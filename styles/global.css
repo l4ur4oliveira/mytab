@@ -140,7 +140,7 @@ header .title {
 
 .news-content--item .item-title,
 .news-content--item .item-title a {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   transition: border-bottom 400ms;
 }
