@@ -4,13 +4,13 @@ function fetchData(apiURL) {
         .then((data) => {
             const newData = data.map((item) => {
                 return {
-                    title: item.title,
+                    title: item.title || item.name,
                     url: item.url || `https://www.tabnews.com.br/${item.owner_username}/${item.slug}`,
                     description: item.description || "",
                 };
             });
 
-            return newData.slice(0,8);
+            return newData.slice(0, 8);
         });
 }
 
@@ -24,7 +24,7 @@ function renderData(item) {
 }
 
 function getGithub() {
-    fetchData("https://api.hackertab.dev/data/v2/github/global/daily.json").then((data) => {
+    fetchData("https://api.hackertab.dev/engine/repos?range=daily&tags=frontend").then((data) => {
         const newsColumn = document.querySelector(".github");
 
         newsColumn.innerHTML = data.map((item) => renderData(item)).join("");
@@ -32,7 +32,7 @@ function getGithub() {
 }
 
 function getMedium() {
-    fetchData("https://api.hackertab.dev/data/v2/medium/javascript.json").then((data) => {
+    fetchData("https://api.hackertab.dev/engine/feeds?source=medium").then((data) => {
         const newsColumn = document.querySelector(".medium");
 
         newsColumn.innerHTML = data.map((item) => renderData(item)).join("");
@@ -40,7 +40,7 @@ function getMedium() {
 }
 
 function getDevto() {
-    fetchData("https://api.hackertab.dev/data/v2/devto/programming.json").then((data) => {
+    fetchData("https://api.hackertab.dev/engine/feeds?source=devto").then((data) => {
         const newsColumn = document.querySelector(".devto");
 
         newsColumn.innerHTML = data.map((item) => renderData(item)).join("");
